@@ -15,3 +15,31 @@ string generateID(string Type) {
   string generatedID = Type.at(0) + to_string(number);
   return generatedID;
 }
+
+void getIntegerVariable(int &variable, string message) {
+  // This function the variable from input stream and pass by reference
+  // We need to make sure that the user is actually inputting a number
+  // Otherwise, this function will force the user to input until they give a
+  // number
+  string rawInput = "";
+  bool numberIsValid = false;
+  // Prompt the user until they give a correct numeric value, using exception
+  // handling
+  while (numberIsValid == false) {
+    try {
+      cout << message;
+      // Get input as string
+      cin >> rawInput;
+      // Try converting to float, to make sure that it can be processed
+      variable = stoi(rawInput);
+      if (variable < 0) {
+        // Reject -ve inputs
+        throw 1;
+      }
+      numberIsValid = true;
+    } catch (...) {
+      cout << "There was an error processing the input. Please try "
+              "again.\n";
+    }
+  }
+}

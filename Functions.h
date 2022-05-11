@@ -11,5 +11,6 @@ using namespace std;
 // Generate a unique ID based on Data Type (Customers, Person, DeliveryMan,
 // Item, Order)
 string generateID(string Type);
+void getIntegerVariable(int &variable, string message);
 
 #endif
