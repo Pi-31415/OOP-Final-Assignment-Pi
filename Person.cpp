@@ -15,7 +15,7 @@ string Person::getID() { return id; };
 string Person::getName() { return name; };
 string Person::getEmail() { return email; };
 string Person::getMobile() { return mobile; };
-// Declare Setters
-void setName(string value);
-void setEmail(string value);
-void setMobile(string value);
+// Declare Setters, with const for safety
+void Person::setName(const string value) { name = value; };
+void Person::setEmail(const string value) { email = value; };
+void Person::setMobile(const string value) { mobile = value; };

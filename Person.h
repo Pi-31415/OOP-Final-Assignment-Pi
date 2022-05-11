@@ -25,7 +25,7 @@ public: // Declare Public Functions
   string getEmail();
   string getMobile();
   // Declare Setters
-  void setName(string value);
-  void setEmail(string value);
-  void setMobile(string value);
+  void setName(const string value);
+  void setEmail(const string value);
+  void setMobile(const string value);
 };

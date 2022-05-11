@@ -14,6 +14,7 @@ int main() {
   cout << person1.getEmail() << endl;
   cout << person1.getMobile() << endl;
   cout << person1.getName() << endl;
-
+  person1.setName("Silvey");
+  cout << person1.getName() << endl;
   return 0;
 }
