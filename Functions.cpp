@@ -30,7 +30,7 @@ void getIntegerVariable(int &variable, string message) {
   // handling
   while (numberIsValid == false) {
     try {
-      cout << "[INPUT] " << message << " :";
+      cout << "[INPUT] " << message << " : ";
       // Get input as string
       cin >> rawInput;
       // Try converting to number, to make sure that it can be processed
@@ -41,7 +41,7 @@ void getIntegerVariable(int &variable, string message) {
       }
       numberIsValid = true;
     } catch (...) {
-      cout << "There was an error processing the input. Please try "
+      cout << "[ERROR] Invalid input. Try "
               "again.\n";
     }
   }
@@ -58,7 +58,7 @@ void getDoubleVariable(double &variable, string message) {
   // handling
   while (numberIsValid == false) {
     try {
-      cout << "[INPUT] " << message << " :";
+      cout << "[INPUT] " << message << " : ";
       // Get input as string
       cin >> rawInput;
       // Try converting to number, to make sure that it can be processed
@@ -69,7 +69,7 @@ void getDoubleVariable(double &variable, string message) {
       }
       numberIsValid = true;
     } catch (...) {
-      cout << "There was an error processing the input. Please try "
+      cout << "[ERROR] Invalid input. Try "
               "again.\n";
     }
   }
@@ -86,7 +86,7 @@ void getStringVariable(string &variable, string message) {
   // handling
   while (numberIsValid == false) {
     try {
-      cout << "[INPUT] " << message << " :";
+      cout << "[INPUT] " << message << " : ";
       // Get input as string
       cin >> rawInput;
       // Check if it is empty string
@@ -97,7 +97,7 @@ void getStringVariable(string &variable, string message) {
       }
       numberIsValid = true;
     } catch (...) {
-      cout << "There was an error processing the input. Please try "
+      cout << "[ERROR] Invalid input. Try "
               "again.\n";
     }
   }

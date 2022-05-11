@@ -14,13 +14,12 @@ CustomerList::CustomerList(){};
 void CustomerList::addCustomer() {
   string name, email, mobile, address;
   double discount;
-  getStringVariable(name, "Please insert name");
-  getStringVariable(email, "Please insert email");
-  getStringVariable(mobile, "Please insert mobile");
-  getStringVariable(address, "Please insert address");
-  getDoubleVariable(discount, "Please enter discount %");
+  getStringVariable(name, "Name");
+  getStringVariable(email, "Email");
+  getStringVariable(mobile, "Mobile");
+  getStringVariable(address, "Address");
+  getDoubleVariable(discount, "Discount %");
   Customer p1(name, email, mobile, address, discount);
-  // Customer p2("PIEE22", "pk2269", "98765", "NYU", 40);
   Customers.push_back(p1);
 }
 
@@ -29,6 +28,11 @@ void CustomerList::removeCustomer(string ID) { cout << "Removing"; };
 //   This prints out the information of all customers, in a tabular format
 void CustomerList::printInfo() {
   // First Print Headers
+  cout << "\n__________________________________________________________________"
+          "__"
+          "________________________";
+  cout << "\n| ";
+  cout << setw(5) << left << "#";
   cout << "| ";
   cout << setw(TAB_WIDTH - 5) << left << "ID"
        << " | ";
@@ -44,7 +48,11 @@ void CustomerList::printInfo() {
        << "| \n";
   list<Customer>::iterator it;
   // Print Data
+  int counter = 0;
   for (it = Customers.begin(); it != Customers.end(); ++it) {
+    counter++;
+    cout << "| ";
+    cout << setw(5) << left << counter;
     cout << "| ";
     cout << setw(TAB_WIDTH - 5) << left << it->getID() << " | ";
     cout << setw(TAB_WIDTH) << left << it->getName() << " | ";
@@ -53,4 +61,7 @@ void CustomerList::printInfo() {
     cout << setw(TAB_WIDTH) << left << it->getAddress() << " | ";
     cout << setw(TAB_WIDTH) << left << it->getDiscount() << "| \n";
   }
+  // Print closing line
+  cout << "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾"
+          "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n";
 };
