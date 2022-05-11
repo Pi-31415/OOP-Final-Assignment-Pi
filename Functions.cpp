@@ -27,10 +27,10 @@ void getIntegerVariable(int &variable, string message) {
   // handling
   while (numberIsValid == false) {
     try {
-      cout << message;
+      cout << "[INPUT] " << message << " :";
       // Get input as string
       cin >> rawInput;
-      // Try converting to float, to make sure that it can be processed
+      // Try converting to int, to make sure that it can be processed
       variable = stoi(rawInput);
       if (variable < 0) {
         // Reject -ve inputs
