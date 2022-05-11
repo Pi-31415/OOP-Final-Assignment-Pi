@@ -23,6 +23,8 @@ public: // Declare Public Functions
   // Declare Setters
   void setAddress(const string value);
   void setDiscount(const double value);
+  // Print Customer Information
+  void printInfo();
 };
 
 #endif
