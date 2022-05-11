@@ -23,7 +23,10 @@ int main() {
       c1.addCustomer();
       c1.printInfo();
     } else {
-      c1.removeCustomer("");
+      string name;
+      getStringVariable(name, "ID to delete");
+      c1.removeCustomer(name);
+      c1.printInfo();
       // break;
     }
   }

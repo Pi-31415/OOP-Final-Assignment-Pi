@@ -7,14 +7,15 @@ using namespace std;
 // Define the Tab Width for setw
 #define TAB_WIDTH 13
 
-// Reference :
+// Below code is for finding object in the list, by functor predicate and
+// std::find_if. Reference :
 // https://stackoverflow.com/questions/16445358/stdfind-object-by-member
-struct person_has_name {
-  person_has_name(std::string const &n) : name(n) {}
-  bool operator()(Customer const &p) { return p.id == name; }
+struct findByID {
+  findByID(string const &n) : query(n) {}
+  bool operator()(Customer const &p) { return p.id == query; }
 
 private:
-  std::string name;
+  string query;
 };
 
 CustomerList::CustomerList(){};
@@ -41,16 +42,11 @@ void CustomerList::addCustomer(string name, string email, string mobile,
 }
 // This removes the customer with the specific ID
 void CustomerList::removeCustomer(string ID) {
-  // Reference :
+  // Below code is for finding object in the list, by functor predicate and
+  // std::find_if. Reference :
   // https://stackoverflow.com/questions/16445358/stdfind-object-by-member
-  std::string name = "";
-  getStringVariable(name, "Input name to search");
-  std::list<Customer>::iterator result = Customers.begin();
-
-  result =
-      std::find_if(Customers.begin(), Customers.end(), person_has_name(name));
-
-  result->printInfo();
+  list<Customer>::iterator result = Customers.begin();
+  result = find_if(Customers.begin(), Customers.end(), findByID(ID));
   Customers.erase(result);
 }
 //   This prints out the information of all customers, in a tabular format
