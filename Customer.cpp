@@ -32,5 +32,5 @@ void Customer::printInfo() {
   cout << setw(TAB_WIDTH) << left << "Email : " << email << "\n";
   cout << setw(TAB_WIDTH) << left << "Mobile : " << mobile << "\n";
   cout << setw(TAB_WIDTH) << left << "Address : " << address << "\n";
-  cout << setw(TAB_WIDTH) << left << "Discount : " << discount << "\n";
+  cout << setw(TAB_WIDTH) << left << "Discount (%): " << discount << "\n";
 };

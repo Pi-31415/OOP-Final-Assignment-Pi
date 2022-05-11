@@ -7,9 +7,12 @@ using namespace std;
 
 // The following are Utility Functions for different classes
 
+static int random_seed = 0;
 string generateID(string Type) {
+  random_seed++;
+  srand(random_seed);
   // Use current time to generate a Unique numerical ID
-  int number = time(0) % 100000;
+  int number = rand() % time(0);
   // Then, generate an ID, by combing the first letter of Type, and the
   // numerical ID
   string generatedID = Type.at(0) + to_string(number);
