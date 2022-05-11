@@ -10,7 +10,7 @@ using namespace std;
 CustomerList::CustomerList(){};
 
 // This adds a new Customer instance to the list container
-
+// This function is for manual user input
 void CustomerList::addCustomer() {
   string name, email, mobile, address;
   double discount;
@@ -19,8 +19,8 @@ void CustomerList::addCustomer() {
   getStringVariable(mobile, "Mobile");
   getStringVariable(address, "Address");
   getDoubleVariable(discount, "Discount %");
-  Customer p1(name, email, mobile, address, discount);
-  Customers.push_back(p1);
+  Customer temporary(name, email, mobile, address, discount);
+  Customers.push_back(temporary);
 }
 
 // This removes the customer with the specific ID
