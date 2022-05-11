@@ -74,3 +74,31 @@ void getDoubleVariable(double &variable, string message) {
     }
   }
 }
+
+void getStringVariable(string &variable, string message) {
+  // This function the variable from input stream and pass by reference
+  // We need to make sure that the user is actually inputting a number
+  // Otherwise, this function will force the user to input until they give a
+  // number
+  string rawInput = "";
+  bool numberIsValid = false;
+  // Prompt the user until they give a correct numeric value, using exception
+  // handling
+  while (numberIsValid == false) {
+    try {
+      cout << "[INPUT] " << message << " :";
+      // Get input as string
+      cin >> rawInput;
+      // Check if it is empty string
+      variable = rawInput;
+      if (variable == "") {
+        // Reject -ve inputs
+        throw 1;
+      }
+      numberIsValid = true;
+    } catch (...) {
+      cout << "There was an error processing the input. Please try "
+              "again.\n";
+    }
+  }
+}

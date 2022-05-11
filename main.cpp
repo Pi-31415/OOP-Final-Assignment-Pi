@@ -14,5 +14,11 @@ int main() {
   CustomerList c1;
   c1.addCustomer();
   c1.printInfo();
+  c1.addCustomer();
+  c1.printInfo();
+  c1.addCustomer();
+  c1.printInfo();
+  c1.addCustomer();
+  c1.printInfo();
   return 0;
 }
