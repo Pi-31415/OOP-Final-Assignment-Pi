@@ -1,17 +1,19 @@
+#include <fstream>
 #include <iostream>
+#include <sstream>
+#include <vector>
 
-using namespace std;
+// Import required headers and libraries
+#include "Person.h"
 
 int main() {
-  cout << "   ____                 __   _                   __\n";
-  cout << "  /  _/____ ____ ___ _ / /_ (_)___   ___  ___ _ / /\n";
-  cout << " _/ / / __// __// _ `// __\/\/ \/\/ _ \\ / _ \\/ _ `// / \n";
-  cout << "/___//_/  /_/   \\_,_/ \\__//_/ \\___//_//_/\\_,_//_/  \n";
 
-  cout << " ______ ___    ____ ______ ____\n";
-  cout << "/_  __// _ |  / __//_  __// __/\n";
-  cout << " / /  / __ | _\\ \\   / /  / _/  \n";
-  cout << "/_/  /_/ |_|/___/  /_/  /___/  \n";
+  // create object
+  Person person1("Pi Ko", "pk2269@nyu.edu", "987654321");
+  cout << person1.getID() << endl;
+  cout << person1.getEmail() << endl;
+  cout << person1.getMobile() << endl;
+  cout << person1.getName() << endl;
 
   return 0;
 }
