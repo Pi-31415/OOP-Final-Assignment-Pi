@@ -30,8 +30,36 @@ void getIntegerVariable(int &variable, string message) {
       cout << "[INPUT] " << message << " :";
       // Get input as string
       cin >> rawInput;
-      // Try converting to int, to make sure that it can be processed
+      // Try converting to number, to make sure that it can be processed
       variable = stoi(rawInput);
+      if (variable < 0) {
+        // Reject -ve inputs
+        throw 1;
+      }
+      numberIsValid = true;
+    } catch (...) {
+      cout << "There was an error processing the input. Please try "
+              "again.\n";
+    }
+  }
+}
+
+void getDoubleVariable(double &variable, string message) {
+  // This function the variable from input stream and pass by reference
+  // We need to make sure that the user is actually inputting a number
+  // Otherwise, this function will force the user to input until they give a
+  // number
+  string rawInput = "";
+  bool numberIsValid = false;
+  // Prompt the user until they give a correct numeric value, using exception
+  // handling
+  while (numberIsValid == false) {
+    try {
+      cout << "[INPUT] " << message << " :";
+      // Get input as string
+      cin >> rawInput;
+      // Try converting to number, to make sure that it can be processed
+      variable = stod(rawInput);
       if (variable < 0) {
         // Reject -ve inputs
         throw 1;

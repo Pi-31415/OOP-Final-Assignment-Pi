@@ -26,5 +26,9 @@ int main() {
   int a = 0;
   getIntegerVariable(a, "Enter a");
   cout << a;
+
+  double b = 0;
+  getDoubleVariable(b, "Enter b");
+  cout << b;
   return 0;
 }
