@@ -5,7 +5,17 @@
 
 using namespace std;
 // Define the Tab Width for setw
-#define TAB_WIDTH 12
+#define TAB_WIDTH 13
+
+// Reference :
+// https://stackoverflow.com/questions/16445358/stdfind-object-by-member
+struct person_has_name {
+  person_has_name(std::string const &n) : name(n) {}
+  bool operator()(Customer const &p) { return p.id == name; }
+
+private:
+  std::string name;
+};
 
 CustomerList::CustomerList(){};
 
@@ -22,15 +32,33 @@ void CustomerList::addCustomer() {
   Customer temporary(name, email, mobile, address, discount);
   Customers.push_back(temporary);
 }
-
+// Function overloading for paramaterization. This can be called to record the
+// customer info programatically
+void CustomerList::addCustomer(string name, string email, string mobile,
+                               string address, double discount) {
+  Customer temporary(name, email, mobile, address, discount);
+  Customers.push_back(temporary);
+}
 // This removes the customer with the specific ID
-void CustomerList::removeCustomer(string ID) { cout << "Removing"; };
+void CustomerList::removeCustomer(string ID) {
+  // Reference :
+  // https://stackoverflow.com/questions/16445358/stdfind-object-by-member
+  std::string name = "";
+  getStringVariable(name, "Input name to search");
+  std::list<Customer>::iterator result = Customers.begin();
+
+  result =
+      std::find_if(Customers.begin(), Customers.end(), person_has_name(name));
+
+  result->printInfo();
+  Customers.erase(result);
+}
 //   This prints out the information of all customers, in a tabular format
 void CustomerList::printInfo() {
   // First Print Headers
   cout << "\n__________________________________________________________________"
           "__"
-          "________________________";
+          "______________________________";
   cout << "\n| ";
   cout << setw(5) << left << "#";
   cout << "| ";
@@ -63,5 +91,6 @@ void CustomerList::printInfo() {
   }
   // Print closing line
   cout << "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾"
+          "‾‾‾‾‾‾"
           "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n";
 };

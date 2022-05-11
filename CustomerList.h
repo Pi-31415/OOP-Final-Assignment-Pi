@@ -16,8 +16,11 @@ private:
 public:
   //   Default Constructor
   CustomerList();
-  // This adds a new Customer instance to the list container
+  // This adds a new Customer instance to the list container, manually
   void addCustomer();
+  // This adds a new Customer programatically via function overloading
+  void addCustomer(string name, string email, string mobile, string address,
+                   double discount);
   // This removes the customer with the specific ID
   void removeCustomer(string ID);
   //   This prints out the information of all customers

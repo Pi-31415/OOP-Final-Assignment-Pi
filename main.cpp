@@ -10,8 +10,12 @@
 
 int main() {
   // create object
-  Customer person1("Pi Ko", "pk2269@nyu.edu", "987654321", "NYUAD", 40);
+  // Customer person1("Pi Ko", "pk2269@nyu.edu", "987654321", "NYUAD", 40);
   CustomerList c1;
+  c1.addCustomer("Pi Ko", "pk229@nyu.edu", "987654321", "NYUAD", 40);
+  c1.addCustomer("Akira", "pk229@nyu.edu", "987654321", "NYUAD", 40);
+  c1.addCustomer("Silvey", "pk229@nyu.edu", "987654321", "NYUAD", 40);
+  c1.printInfo();
   int menu = 0;
   while (true) {
     getIntegerVariable(menu, "Menu");
@@ -19,8 +23,8 @@ int main() {
       c1.addCustomer();
       c1.printInfo();
     } else {
-      break;
-      cout << "Done";
+      c1.removeCustomer("");
+      // break;
     }
   }
 
