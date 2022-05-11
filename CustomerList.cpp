@@ -58,11 +58,11 @@ void CustomerList::printInfo() {
   cout << "\n| ";
   cout << setw(5) << left << "#";
   cout << "| ";
-  cout << setw(TAB_WIDTH - 5) << left << "ID"
-       << " | ";
+  cout << setw(TAB_WIDTH - 8) << left << "ID"
+       << "  | ";
   cout << setw(TAB_WIDTH) << left << "Name"
        << " | ";
-  cout << setw(TAB_WIDTH) << left << "Email"
+  cout << setw(TAB_WIDTH + 3) << left << "Email"
        << " | ";
   cout << setw(TAB_WIDTH) << left << "Mobile"
        << " | ";
@@ -78,9 +78,9 @@ void CustomerList::printInfo() {
     cout << "| ";
     cout << setw(5) << left << counter;
     cout << "| ";
-    cout << setw(TAB_WIDTH - 5) << left << it->getID() << " | ";
+    cout << setw(TAB_WIDTH - 8) << left << it->getID() << " | ";
     cout << setw(TAB_WIDTH) << left << it->getName() << " | ";
-    cout << setw(TAB_WIDTH) << left << it->getEmail() << " | ";
+    cout << setw(TAB_WIDTH + 3) << left << it->getEmail() << " | ";
     cout << setw(TAB_WIDTH) << left << it->getMobile() << " | ";
     cout << setw(TAB_WIDTH) << left << it->getAddress() << " | ";
     cout << setw(TAB_WIDTH) << left << it->getDiscount() << "| \n";
