@@ -11,6 +11,7 @@ Person::Person(string Name, string Email, string Mobile) {
   mobile = Mobile;
 };
 
+// Declare Getters
 string Person::getID() { return id; };
 string Person::getName() { return name; };
 string Person::getEmail() { return email; };

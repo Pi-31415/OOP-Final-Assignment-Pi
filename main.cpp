@@ -7,14 +7,13 @@
 #include "Person.h"
 
 int main() {
-
   // create object
   Person person1("Pi Ko", "pk2269@nyu.edu", "987654321");
   cout << person1.getID() << endl;
   cout << person1.getEmail() << endl;
   cout << person1.getMobile() << endl;
   cout << person1.getName() << endl;
-  person1.setName("Silvey");
+  person1.setName("1234");
   cout << person1.getName() << endl;
   return 0;
 }
