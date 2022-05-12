@@ -5,7 +5,7 @@
 
 using namespace std;
 // Define the Tab Width for setw
-#define TAB_WIDTH 13
+#define TAB_WIDTH 12
 
 // Below code is for finding object in the list, by functor predicate and
 // std::find_if. Reference :
@@ -55,16 +55,16 @@ void CustomerList::printInfo() {
   cout << "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
   cout << "█ CURRENT CUSTOMERS IN SYSTEM █";
   cout << "\n██████████████████████████████████████████████████████████████████"
-          "█████████████████████████████████";
+          "████████████████████████████████";
   cout << "\n█ ";
   cout << setw(5) << left << "#";
   cout << "█ ";
-  cout << setw(TAB_WIDTH - 8) << left << "ID"
-       << "  █ ";
+  cout << setw(TAB_WIDTH) << left << "ID"
+       << " █ ";
   cout << setw(TAB_WIDTH) << left << "Name"
        << " █ ";
-  cout << setw(TAB_WIDTH + 3) << left << "Email"
-       << " █ ";
+  cout << setw(TAB_WIDTH) << left << "Email"
+       << "  █ ";
   cout << setw(TAB_WIDTH) << left << "Mobile"
        << " █ ";
   cout << setw(TAB_WIDTH) << left << "Address"
@@ -79,14 +79,14 @@ void CustomerList::printInfo() {
     cout << "█ ";
     cout << setw(5) << left << counter;
     cout << "█ ";
-    cout << setw(TAB_WIDTH - 8) << left << it->getID() << " █ ";
+    cout << setw(TAB_WIDTH) << left << it->getID() << " █ ";
     cout << setw(TAB_WIDTH) << left << it->getName() << " █ ";
-    cout << setw(TAB_WIDTH + 3) << left << it->getEmail() << " █ ";
+    cout << setw(TAB_WIDTH) << left << it->getEmail() << " █ ";
     cout << setw(TAB_WIDTH) << left << it->getMobile() << " █ ";
     cout << setw(TAB_WIDTH) << left << it->getAddress() << " █ ";
     cout << setw(TAB_WIDTH) << left << it->getDiscount() << "█ \n";
   }
   // Print closing line
   cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
-          "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n";
+          "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n";
 };
