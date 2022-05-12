@@ -28,4 +28,11 @@ void printBanner();
 // Clears the screen by printing many blank lines.
 void clearScreen();
 
+// Prints out main menu
+void printMainMenu();
+void printMenuOrder();
+void printMenuCustomer();
+void printMenuDelivery();
+void printMenuItem();
+
 #endif

@@ -152,3 +152,44 @@ void clearScreen() {
     cout << endl;
   }
 }
+
+// Prints main menu
+void printMainMenu() {
+  cout << "A fast food delivery management system by Pi" << endl;
+  cout << "--------------------------------------------" << endl;
+  cout << "Options" << endl;
+  cout << "[1] Manage Orders" << endl;
+  cout << "[2] Manage Customers" << endl;
+  cout << "[3] Manage Delivery Men" << endl;
+  cout << "[4] Manage Food Items" << endl;
+  cout << "[0] Exit Program" << endl << endl;
+}
+
+void printMenuOrder() {
+  cout << "\nOptions" << endl;
+  cout << "[5] New Order" << endl;
+  cout << "[6] Remove an Order" << endl;
+  cout << "[7] Mark an order as complete" << endl;
+  cout << "[8] Back" << endl;
+}
+
+void printMenuCustomer() {
+  cout << "\nOptions" << endl;
+  cout << "[9] New Customer" << endl;
+  cout << "[10] Remove a Customer" << endl;
+  cout << "[11] Back" << endl;
+}
+
+void printMenuDelivery() {
+  cout << "\nOptions" << endl;
+  cout << "[12] New Delivery Man" << endl;
+  cout << "[13] Remove a Delivery Man" << endl;
+  cout << "[14] Back" << endl;
+}
+
+void printMenuItem() {
+  cout << "\nOptions" << endl;
+  cout << "[15] New Item" << endl;
+  cout << "[16] Remove an Item" << endl;
+  cout << "[17] Back" << endl;
+}

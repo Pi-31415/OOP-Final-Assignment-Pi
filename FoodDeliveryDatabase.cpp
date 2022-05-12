@@ -70,8 +70,8 @@ void FoodDeliveryDatabase::printInfo() {
   try {
     cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
     cout << "█ Current Orders █";
-    cout << "\n███████████████████████████████████████████████████"
-            "█";
+    cout << "\n████████████████████████████████████████████████████████████████"
+            "█████████████████████████████████████████";
     cout << "\n█ ";
     cout << setw(5) << left << "#";
     cout << "█ ";
@@ -80,6 +80,8 @@ void FoodDeliveryDatabase::printInfo() {
     cout << setw(TAB_WIDTH) << left << "Name"
          << " █ ";
     cout << setw(TAB_WIDTH) << left << "Price (AED)"
+         << " █ ";
+    cout << setw(50) << left << "Items"
          << "█ \n";
     list<Order>::iterator it;
     // Print Data
@@ -91,11 +93,13 @@ void FoodDeliveryDatabase::printInfo() {
       cout << "█ ";
       cout << setw(TAB_WIDTH) << left << it->getID() << " █ ";
       cout << setw(TAB_WIDTH) << left << it->getCustomer() << " █ ";
-      cout << setw(TAB_WIDTH) << left << it->getItems() << "█ \n";
+      cout << setw(TAB_WIDTH) << left << it->getTotalPrice() << " █ ";
+      cout << setw(50) << left << it->getItems() << "█ \n";
     }
     // Print closing line
+
     cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
-            "▀▀\n";
+            "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n";
   } catch (...) {
     cout << "[Error] Could not print Order information.\n";
   }
