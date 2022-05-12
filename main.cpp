@@ -11,6 +11,7 @@
 #include "Functions.h"
 #include "Item.h"
 #include "ItemList.h"
+#include "Order.h"
 
 int main() {
   // create object
