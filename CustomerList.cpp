@@ -49,7 +49,7 @@ void CustomerList::removeCustomer(string ID) {
     list<Customer>::iterator result = Customers.begin();
     result = find_if(Customers.begin(), Customers.end(), findByID(ID));
     // If the result is from random memory addresses, reject the finding result
-    if (result->getDiscount() <= 0.0000000001 && result->getDiscount() != 0) {
+    if (result->getFaultHandler() != 100) {
       throw(0);
     } else {
       Customers.erase(result);
@@ -65,7 +65,7 @@ void CustomerList::getCustomerInfo(string ID) {
     list<Customer>::iterator result = Customers.begin();
     result = find_if(Customers.begin(), Customers.end(), findByID(ID));
     // If the result is from random memory addresses, reject the finding result
-    if (result->getDiscount() <= 0.0000000001 && result->getDiscount() != 0) {
+    if (result->getFaultHandler() != 100) {
       throw(0);
     } else {
       result->printInfo();
@@ -81,7 +81,7 @@ double CustomerList::getCustomerDiscount(string ID) {
     list<Customer>::iterator result = Customers.begin();
     result = find_if(Customers.begin(), Customers.end(), findByID(ID));
     // If the result is from random memory addresses, reject the finding result
-    if (result->getDiscount() <= 0.0000000001 && result->getDiscount() != 0) {
+    if (result->getFaultHandler() != 100) {
       throw(0);
     } else {
       return result->getDiscount();

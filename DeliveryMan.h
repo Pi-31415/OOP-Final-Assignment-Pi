@@ -7,8 +7,6 @@
 class DeliveryMan : public Person {
 protected:
   string motorbikeID;
-  // This is for handling segmentation faults
-  int faultHandler;
 
 public: // Declare Public Functions
   // Default Constructor  for DeliveryMan Class

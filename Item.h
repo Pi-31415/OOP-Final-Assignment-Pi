@@ -8,6 +8,8 @@ private:
   string name;
   int stock;
   double price;
+  // This is for handling segmentation faults
+  int faultHandler;
 
 public: // Declare Public Functions
   string id;
@@ -19,6 +21,7 @@ public: // Declare Public Functions
   string getID();
   string getName();
   double getPrice();
+  int getFaultHandler();
   // Declare Setters
   void setName(const string value);
   void addItem(const int value);

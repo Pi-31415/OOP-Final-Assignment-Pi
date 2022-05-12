@@ -22,6 +22,7 @@ Customer::Customer(string Name, string Email, string Mobile, string Address,
 // Getters
 string Customer::getAddress() { return address; };
 double Customer::getDiscount() { return discount; };
+int Customer::getFaultHandler() { return faultHandler; };
 // Declare Setters
 void Customer::setAddress(const string value) { address = value; };
 void Customer::setDiscount(const double value) { discount = value; };

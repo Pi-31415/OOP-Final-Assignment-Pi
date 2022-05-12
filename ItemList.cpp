@@ -50,6 +50,7 @@ void ItemList::removeItem(string ID) {
 double ItemList::getItemPrice(string ID) {
   list<Item>::iterator result = ItemDatabase.begin();
   result = find_if(ItemDatabase.begin(), ItemDatabase.end(), findByID(ID));
+  cout << result->getFaultHandler();
   return result->getPrice();
 }
 
