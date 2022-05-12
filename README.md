@@ -29,6 +29,24 @@ Options
 
 Food Delivery Management System in C++ by Pi (pk2269)
 
+## How to Run
+
+First, clone the repository with
+
+```
+git clone https://github.com/Pi-31415/OOP-Final-Assignment-Pi
+```
+
+Then, get into repository.
+
+```
+cd OOP-Final-Assignment-Pi
+```
+
+**IMPORTANT : Make sure terminal is full screen, and you have g++ and C++11.**
+
+Then build and run using
+
 ```
 rm -rf *.o output && make
 ```
