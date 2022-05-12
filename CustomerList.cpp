@@ -88,7 +88,7 @@ double CustomerList::getCustomerDiscount(string ID) {
     }
   } catch (...) {
     cout << "[Error] Could not find customer with ID " << ID << ".\n";
-    return 0;
+    return 101;
   }
 }
 

@@ -70,6 +70,24 @@ double ItemList::getItemPrice(string ID) {
     return 0;
   }
 }
+// This empties the array
+void ItemList::clear() { ItemDatabase.clear(); };
+// This prints out a particular Item's name from their ID
+string ItemList::getItemName(string ID) {
+  try {
+    list<Item>::iterator result = ItemDatabase.begin();
+    result = find_if(ItemDatabase.begin(), ItemDatabase.end(), findByID(ID));
+
+    if (result->getFaultHandler() != 100) {
+      throw(0);
+    } else {
+      return result->getName();
+    }
+  } catch (...) {
+    cout << "[Error] Could not find item with ID " << ID << ".\n";
+    return "";
+  }
+}
 
 // This calculates the total price (without discount), for particular item
 // list

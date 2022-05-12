@@ -22,12 +22,18 @@ int main() {
   printMainMenu();
 
   string query = "";
+  double currentDiscount = 0;
+  string orderedItemTemp = "";
+  string customerTemp = "";
+  string deliveryTemp = "";
+  double totalPriceTemp = 0.0;
 
   // Instantiate Objects
   CustomerList customersData;
   DeliveryManList deliveryMenData;
   ItemList foodData;
   FoodDeliveryDatabase mainDataBase;
+  ItemList tempItem;
 
   // Instantiate Initial Data
   customersData.addCustomer("Yu Lifan", "lf@qq.com", "+86 235877", "Chongqing",
@@ -46,8 +52,8 @@ int main() {
   foodData.addItem("Roasted Duck", 82.5);
   foodData.addItem("Jasmine Tea", 12.5);
 
-  mainDataBase.addOrder("Jasmine Tea,Roasted Duck", "Wang Qiyun", "Sun Tzu",
-                        95);
+  mainDataBase.addOrder("Jasmine Tea,Roasted Duck", "C1234", "D1234", 95);
+  mainDataBase.addOrder("Roasted Duck", "C2523", "D1156", 82.5);
 
   // Main Program. Put the user in while true loop until exit
   int choice = 100;
@@ -84,10 +90,64 @@ int main() {
       getIntegerVariable(choice, "Enter Choice [15,16,17]");
       break;
     case 5:
-      cout << "Friday";
+      // Add a new Order
+      clearScreen();
+      tempItem.clear();
+      // First Get the food to order
+      foodData.printInfo();
+      query = "";
+      cout << "Add the Item to Order. Type the ID to add the Item." << endl
+           << endl;
+      getStringVariable(query, "ID of Food (Type, such as I117649)");
+      // getStringVariable(query, "ID of Food (Type, such as
+      // I117649)");
+      if (foodData.getItemName(query) != "") {
+        tempItem.addItem(foodData.getItemName(query),
+                         foodData.getItemPrice(query));
+        orderedItemTemp = tempItem.getAllItems();
+        totalPriceTemp = tempItem.calculateTotalPrice();
+      } else {
+        // Go back if error
+        choice = 1;
+      }
+      // Then get customer data
+      clearScreen();
+      customersData.printInfo();
+      cout << "Who orderd it? Type the ID." << endl << endl;
+      query = "";
+      cout << "ID of Customer (Type, such as C117649) : ";
+      cin >> query;
+      customerTemp = query;
+      if (customersData.getCustomerDiscount(query) != 101) {
+        currentDiscount = customersData.getCustomerDiscount(query);
+        // Apply Discount
+        totalPriceTemp =
+            totalPriceTemp - ((currentDiscount / 100) * totalPriceTemp);
+      } else {
+        // Go back if error
+        choice = 1;
+      }
+      // Then add delivery man
+      clearScreen();
+      deliveryMenData.printInfo();
+      cout << "Who will deliver? Type the ID." << endl << endl;
+      getStringVariable(query, "ID of Delivery Man (Type, such as D117649)");
+      deliveryTemp = query;
+      mainDataBase.addOrder(orderedItemTemp, customerTemp, deliveryTemp,
+                            totalPriceTemp);
+      clearScreen();
+      mainDataBase.printInfo();
+      printMenuOrder();
+      getIntegerVariable(choice, "Enter Choice [5,6,7,8]");
       break;
     case 6:
-      cout << "Saturday";
+      query = "";
+      getStringVariable(query, "ID to delete (Type, e.g. O16807)");
+      mainDataBase.removeOrder(query);
+      clearScreen();
+      mainDataBase.printInfo();
+      printMenuOrder();
+      getIntegerVariable(choice, "Enter Choice [5,6,7,8]");
       break;
     case 7:
       cout << "Sunday";
@@ -110,7 +170,7 @@ int main() {
     case 10:
       // Delete a customer
       query = "";
-      getStringVariable(query, "ID to delete (Copy and paste, e.g. C16807)");
+      getStringVariable(query, "ID to delete (Type, e.g. C16807)");
       customersData.removeCustomer(query);
       clearScreen();
       customersData.printInfo();
@@ -135,7 +195,7 @@ int main() {
     case 13:
       // Delete a delivery man
       query = "";
-      getStringVariable(query, "ID to delete (Copy and paste, e.g. D16807)");
+      getStringVariable(query, "ID to delete (Type, e.g. D16807)");
       deliveryMenData.removeDeliveryMan(query);
       clearScreen();
       deliveryMenData.printInfo();
@@ -160,7 +220,7 @@ int main() {
     case 16:
       // Delete Food Item
       query = "";
-      getStringVariable(query, "ID to delete (Copy and paste, e.g. I16807)");
+      getStringVariable(query, "ID to delete (Type, e.g. I16807)");
       foodData.removeItem(query);
       clearScreen();
       foodData.printInfo();
