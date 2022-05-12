@@ -41,48 +41,69 @@ void ItemList::removeItem(string ID) {
   // Below code is for finding object in the list, by functor predicate and
   // std::find_if. Reference :
   // https://stackoverflow.com/questions/16445358/stdfind-object-by-member
-  list<Item>::iterator result = ItemDatabase.begin();
-  result = find_if(ItemDatabase.begin(), ItemDatabase.end(), findByID(ID));
-  ItemDatabase.erase(result);
+  try {
+    list<Item>::iterator result = ItemDatabase.begin();
+    result = find_if(ItemDatabase.begin(), ItemDatabase.end(), findByID(ID));
+    if (result->getFaultHandler() != 100) {
+      throw(0);
+    } else {
+      ItemDatabase.erase(result);
+    }
+  } catch (...) {
+    cout << "[Error] Could not find delivery man with ID " << ID << ".\n";
+  }
 }
 
 // This prints out a particular Item's price from their ID
 double ItemList::getItemPrice(string ID) {
-  list<Item>::iterator result = ItemDatabase.begin();
-  result = find_if(ItemDatabase.begin(), ItemDatabase.end(), findByID(ID));
-  cout << result->getFaultHandler();
-  return result->getPrice();
+  try {
+    list<Item>::iterator result = ItemDatabase.begin();
+    result = find_if(ItemDatabase.begin(), ItemDatabase.end(), findByID(ID));
+
+    if (result->getFaultHandler() != 100) {
+      throw(0);
+    } else {
+      return result->getPrice();
+    }
+  } catch (...) {
+    cout << "[Error] Could not find delivery man with ID " << ID << ".\n";
+    return 0;
+  }
 }
 
 //   This prints out the information of all Items, in a tabular format
 void ItemList::printInfo() {
   // First Print Headers
-  cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
-  cout << "█ Available Items █";
-  cout << "\n███████████████████████████████████████████████████"
-          "█";
-  cout << "\n█ ";
-  cout << setw(5) << left << "#";
-  cout << "█ ";
-  cout << setw(TAB_WIDTH) << left << "ID"
-       << " █ ";
-  cout << setw(TAB_WIDTH) << left << "Name"
-       << " █ ";
-  cout << setw(TAB_WIDTH) << left << "Price (AED)"
-       << "█ \n";
-  list<Item>::iterator it;
-  // Print Data
-  int counter = 0;
-  for (it = ItemDatabase.begin(); it != ItemDatabase.end(); ++it) {
-    counter++;
+  try {
+    cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
+    cout << "█ Available Items █";
+    cout << "\n███████████████████████████████████████████████████"
+            "█";
+    cout << "\n█ ";
+    cout << setw(5) << left << "#";
     cout << "█ ";
-    cout << setw(5) << left << counter;
-    cout << "█ ";
-    cout << setw(TAB_WIDTH) << left << it->getID() << " █ ";
-    cout << setw(TAB_WIDTH) << left << it->getName() << " █ ";
-    cout << setw(TAB_WIDTH) << left << it->getPrice() << "█ \n";
+    cout << setw(TAB_WIDTH) << left << "ID"
+         << " █ ";
+    cout << setw(TAB_WIDTH) << left << "Name"
+         << " █ ";
+    cout << setw(TAB_WIDTH) << left << "Price (AED)"
+         << "█ \n";
+    list<Item>::iterator it;
+    // Print Data
+    int counter = 0;
+    for (it = ItemDatabase.begin(); it != ItemDatabase.end(); ++it) {
+      counter++;
+      cout << "█ ";
+      cout << setw(5) << left << counter;
+      cout << "█ ";
+      cout << setw(TAB_WIDTH) << left << it->getID() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getName() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getPrice() << "█ \n";
+    }
+    // Print closing line
+    cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
+            "▀▀\n";
+  } catch (...) {
+    cout << "[Error] Could not print item information.\n";
   }
-  // Print closing line
-  cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
-          "▀▀\n";
 };
