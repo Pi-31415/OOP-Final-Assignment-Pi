@@ -21,15 +21,6 @@ private:
 FoodDeliveryDatabase::FoodDeliveryDatabase(){};
 
 // This adds a new Order instance to the list container
-// This function is for manual user input
-void FoodDeliveryDatabase::addOrder() {
-  string name;
-  double price;
-  getStringVariable(name, "Name");
-  getDoubleVariable(price, "Price (AED)");
-  Order temporary(name, price);
-  OrderDatabase.push_back(temporary);
-}
 // Function overloading for paramaterization. This can be called to record the
 // Order info programatically
 void FoodDeliveryDatabase::addOrder(string OrderItems, string customer,
@@ -99,8 +90,8 @@ void FoodDeliveryDatabase::printInfo() {
       cout << setw(5) << left << counter;
       cout << "█ ";
       cout << setw(TAB_WIDTH) << left << it->getID() << " █ ";
-      cout << setw(TAB_WIDTH) << left << it->getName() << " █ ";
-      cout << setw(TAB_WIDTH) << left << it->getPrice() << "█ \n";
+      cout << setw(TAB_WIDTH) << left << it->getCustomer() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getItems() << "█ \n";
     }
     // Print closing line
     cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"

@@ -21,8 +21,6 @@ private:
 public:
   //   Default Constructor
   FoodDeliveryDatabase();
-  // This adds a new Order instance to the list container, manually
-  void addOrder();
   // This adds a new Order programatically via function overloading
   void addOrder(string OrderItems, string customer, string deliveryman,
                 double totalPrice);
