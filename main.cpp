@@ -150,10 +150,22 @@ int main() {
       getIntegerVariable(choice, "Enter Choice [1,2,3,4 or 0]");
       break;
     case 15:
-      cout << "Sunday";
+      // Add new Food Item
+      foodData.addItem();
+      clearScreen();
+      foodData.printInfo();
+      printMenuItem();
+      getIntegerVariable(choice, "Enter Choice [15,16,17]");
       break;
     case 16:
-      cout << "Sunday";
+      // Delete Food Item
+      query = "";
+      getStringVariable(query, "ID to delete (Copy and paste, e.g. I16807)");
+      foodData.removeItem(query);
+      clearScreen();
+      foodData.printInfo();
+      printMenuItem();
+      getIntegerVariable(choice, "Enter Choice [15,16,17]");
       break;
     case 17:
       // Main Menu
