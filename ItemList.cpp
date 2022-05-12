@@ -50,7 +50,7 @@ void ItemList::removeItem(string ID) {
       ItemDatabase.erase(result);
     }
   } catch (...) {
-    cout << "[Error] Could not find delivery man with ID " << ID << ".\n";
+    cout << "[Error] Could not find item with ID " << ID << ".\n";
   }
 }
 
@@ -66,7 +66,7 @@ double ItemList::getItemPrice(string ID) {
       return result->getPrice();
     }
   } catch (...) {
-    cout << "[Error] Could not find delivery man with ID " << ID << ".\n";
+    cout << "[Error] Could not find item with ID " << ID << ".\n";
     return 0;
   }
 }
