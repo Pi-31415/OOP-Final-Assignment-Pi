@@ -1,12 +1,12 @@
-#ifndef DeliveryMan_H
-#define DeliveryMan_H
+#ifndef DELIVERYMAN_H
+#define DELIVERYMAN_H
 
 #include "Functions.h"
 #include "Person.h"
 
 class DeliveryMan : public Person {
 protected:
-  string MotorbikeID;
+  string motorbikeID;
 
 public: // Declare Public Functions
   // Default Constructor  for DeliveryMan Class
