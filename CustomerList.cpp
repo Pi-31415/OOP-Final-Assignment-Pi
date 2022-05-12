@@ -52,41 +52,41 @@ void CustomerList::removeCustomer(string ID) {
 //   This prints out the information of all customers, in a tabular format
 void CustomerList::printInfo() {
   // First Print Headers
-  cout << "\n__________________________________________________________________"
-          "__"
-          "______________________________";
-  cout << "\n| ";
+  cout << "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
+  cout << "█ CURRENT CUSTOMERS IN SYSTEM █";
+  cout << "\n██████████████████████████████████████████████████████████████████"
+          "█████████████████████████████████";
+  cout << "\n█ ";
   cout << setw(5) << left << "#";
-  cout << "| ";
+  cout << "█ ";
   cout << setw(TAB_WIDTH - 8) << left << "ID"
-       << "  | ";
+       << "  █ ";
   cout << setw(TAB_WIDTH) << left << "Name"
-       << " | ";
+       << " █ ";
   cout << setw(TAB_WIDTH + 3) << left << "Email"
-       << " | ";
+       << " █ ";
   cout << setw(TAB_WIDTH) << left << "Mobile"
-       << " | ";
+       << " █ ";
   cout << setw(TAB_WIDTH) << left << "Address"
-       << " | ";
+       << " █ ";
   cout << setw(TAB_WIDTH) << left << "Discount %"
-       << "| \n";
+       << "█ \n";
   list<Customer>::iterator it;
   // Print Data
   int counter = 0;
   for (it = Customers.begin(); it != Customers.end(); ++it) {
     counter++;
-    cout << "| ";
+    cout << "█ ";
     cout << setw(5) << left << counter;
-    cout << "| ";
-    cout << setw(TAB_WIDTH - 8) << left << it->getID() << " | ";
-    cout << setw(TAB_WIDTH) << left << it->getName() << " | ";
-    cout << setw(TAB_WIDTH + 3) << left << it->getEmail() << " | ";
-    cout << setw(TAB_WIDTH) << left << it->getMobile() << " | ";
-    cout << setw(TAB_WIDTH) << left << it->getAddress() << " | ";
-    cout << setw(TAB_WIDTH) << left << it->getDiscount() << "| \n";
+    cout << "█ ";
+    cout << setw(TAB_WIDTH - 8) << left << it->getID() << " █ ";
+    cout << setw(TAB_WIDTH) << left << it->getName() << " █ ";
+    cout << setw(TAB_WIDTH + 3) << left << it->getEmail() << " █ ";
+    cout << setw(TAB_WIDTH) << left << it->getMobile() << " █ ";
+    cout << setw(TAB_WIDTH) << left << it->getAddress() << " █ ";
+    cout << setw(TAB_WIDTH) << left << it->getDiscount() << "█ \n";
   }
   // Print closing line
-  cout << "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾"
-          "‾‾‾‾‾‾"
-          "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n";
+  cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
+          "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n";
 };
