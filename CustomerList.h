@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CUSTOMER_LIST_H
 #define CUSTOMER_LIST_H
 

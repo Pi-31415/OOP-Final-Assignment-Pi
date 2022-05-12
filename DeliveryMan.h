@@ -1,3 +1,4 @@
+#pragma once
 #ifndef DELIVERYMAN_H
 #define DELIVERYMAN_H
 
