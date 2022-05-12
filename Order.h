@@ -3,7 +3,6 @@
 #define ORDER_H
 
 #include "Functions.h"
-#include "ItemList.h"
 using namespace std;
 
 // Forward Declaration for Order
@@ -16,6 +15,8 @@ private:
   string DeliveryTime;
   string Status;
   double TotalPrice;
+  // This is for handling segmentation faults
+  int faultHandler;
 
 public:
   string id;
@@ -33,6 +34,7 @@ public:
   string getStatus();
   string getItems();
   double getTotalPrice();
+  int getFaultHandler();
   //   Setters
   void setID(string value);
   void setCustomer(string value);

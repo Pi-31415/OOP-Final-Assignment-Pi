@@ -20,6 +20,7 @@ Order::Order(string OrderItems, string customer, string deliveryman,
   DeliveryTime = "-";
   Status = "Incomplete";
   TotalPrice = totalPrice;
+  faultHandler = 100;
 };
 //   Getters
 string Order::getID() { return id; };
@@ -30,6 +31,7 @@ string Order::getDeliveryTime() { return DeliveryTime; };
 string Order::getStatus() { return Status; };
 string Order::getItems() { return orderItems; };
 double Order::getTotalPrice() { return TotalPrice; };
+int Order::getFaultHandler() { return faultHandler; };
 //   Setters
 void Order::setCustomer(string value) { Customer = value; };
 void Order::setDeliveryMan(string value) { DeliveryMan = value; };

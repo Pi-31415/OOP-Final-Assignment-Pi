@@ -66,6 +66,7 @@ int main() {
   cout << o1.getStatus() << endl;
   cout << o1.getItems() << endl;
   cout << o1.getTotalPrice() << endl;
+  cout << o1.getFaultHandler() << endl;
 
   // // CustomerList c1;
   // // c1.addCustomer("Pi Ko", "pk22@nyu.edu", "987654321", "NYU", 10);
