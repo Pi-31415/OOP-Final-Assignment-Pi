@@ -45,6 +45,19 @@ int main() {
 
   Order o1("Coke,Bottle", "Pi Ko", "Eyob", 234);
 
+  cout << "\n\n\n\n\n";
+  cout << o1.getID() << endl;
+  cout << o1.getCustomer() << endl;
+  cout << o1.getDeliveryMan() << endl;
+  cout << o1.getOrderTime() << endl;
+  cout << o1.getDeliveryTime() << endl;
+  cout << o1.getStatus() << endl;
+  cout << o1.getItems() << endl;
+  cout << o1.getTotalPrice() << endl;
+
+  o1.setStatus("Delivered");
+
+  cout << "\n\n\n\n\n";
   cout << o1.getID() << endl;
   cout << o1.getCustomer() << endl;
   cout << o1.getDeliveryMan() << endl;
