@@ -49,6 +49,14 @@ void CustomerList::removeCustomer(string ID) {
   result = find_if(Customers.begin(), Customers.end(), findByID(ID));
   Customers.erase(result);
 }
+
+// This prints out a particular customer's information from their ID
+void CustomerList::getCustomerInfo(string ID) {
+  list<Customer>::iterator result = Customers.begin();
+  result = find_if(Customers.begin(), Customers.end(), findByID(ID));
+  result->printInfo();
+}
+
 //   This prints out the information of all customers, in a tabular format
 void CustomerList::printInfo() {
   // First Print Headers

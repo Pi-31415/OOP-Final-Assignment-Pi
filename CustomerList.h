@@ -23,6 +23,8 @@ public:
                    double discount);
   // This removes the customer with the specific ID
   void removeCustomer(string ID);
+  // This prints out a particular customer's information from their ID
+  void getCustomerInfo(string ID);
   //   This prints out the information of all customers
   void printInfo();
 };

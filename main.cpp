@@ -16,6 +16,7 @@ int main() {
   c1.addCustomer("Akira", "pk229@nyu.edu", "987654321", "NYUAD", 40);
   c1.addCustomer("Silvey", "pk229@nyu.edu", "987654321", "NYUAD", 40);
   c1.printInfo();
+
   int menu = 0;
   while (true) {
     getIntegerVariable(menu, "Menu");
@@ -24,8 +25,9 @@ int main() {
       c1.printInfo();
     } else {
       string name;
-      getStringVariable(name, "ID to delete");
-      c1.removeCustomer(name);
+      getStringVariable(name, "ID to show");
+      c1.getCustomerInfo(name);
+      // c1.removeCustomer(name);
       c1.printInfo();
       // break;
     }
