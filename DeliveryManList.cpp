@@ -43,9 +43,21 @@ void DeliveryManList::removeDeliveryMan(string ID) {
   // Below code is for finding object in the list, by functor predicate and
   // std::find_if. Reference :
   // https://stackoverflow.com/questions/16445358/stdfind-object-by-member
-  list<DeliveryMan>::iterator result = DeliveryMen.begin();
-  result = find_if(DeliveryMen.begin(), DeliveryMen.end(), findByID(ID));
-  DeliveryMen.erase(result);
+  try {
+    list<DeliveryMan>::iterator result = DeliveryMen.begin();
+    result = find_if(DeliveryMen.begin(), DeliveryMen.end(), findByID(ID));
+    // If the result is from random memory addresses, reject the finding result
+    // I used a variable to check because inability to find an item in list
+    // results in segmentation fault And segmentation faults cannot be caught
+    // via try catch
+    if (result->getFaultHandler() != 100) {
+      throw(0);
+    } else {
+      DeliveryMen.erase(result);
+    }
+  } catch (...) {
+    cout << "[Error] Could not remove delivery man with ID " << ID << ".\n";
+  }
 }
 
 // This prints out a particular DeliveryMan's information from their ID
@@ -58,7 +70,7 @@ void DeliveryManList::getDeliveryManInfo(string ID) {
 //   This prints out the information of all DeliveryMen, in a tabular format
 void DeliveryManList::printInfo() {
   // First Print Headers
-  cout << "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
+  cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
   cout << "█ CURRENT DELIVERY MEN IN SYSTEM █";
   cout << "\n██████████████████████████████████████████████████████████████████"
           "████████████████";

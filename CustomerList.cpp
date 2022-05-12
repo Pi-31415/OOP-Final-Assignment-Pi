@@ -96,7 +96,7 @@ double CustomerList::getCustomerDiscount(string ID) {
 void CustomerList::printInfo() {
   try {
     // First Print Headers
-    cout << "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
+    cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
     cout << "█ CURRENT CUSTOMERS IN SYSTEM █";
     cout
         << "\n█████████████████████████████████████████████████████████████████"

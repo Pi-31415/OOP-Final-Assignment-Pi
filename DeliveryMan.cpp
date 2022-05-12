@@ -16,10 +16,12 @@ DeliveryMan::DeliveryMan(string Name, string Email, string Mobile,
   email = Email;
   mobile = Mobile;
   motorbikeID = MotorbikeID;
+  faultHandler = 100;
 };
 
 // Getters
 string DeliveryMan::getMotorbikeID() { return motorbikeID; };
+int DeliveryMan::getFaultHandler() { return faultHandler; };
 // Declare Setters
 void DeliveryMan::setMotorbikeID(const string value) { motorbikeID = value; };
 // Print DeliveryMan Information

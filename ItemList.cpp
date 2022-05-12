@@ -56,7 +56,7 @@ double ItemList::getItemPrice(string ID) {
 //   This prints out the information of all Items, in a tabular format
 void ItemList::printInfo() {
   // First Print Headers
-  cout << "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
+  cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
   cout << "█ Available Items █";
   cout << "\n███████████████████████████████████████████████████"
           "█";

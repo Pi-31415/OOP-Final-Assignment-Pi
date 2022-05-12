@@ -7,6 +7,8 @@
 class DeliveryMan : public Person {
 protected:
   string motorbikeID;
+  // This is for handling segmentation faults
+  int faultHandler;
 
 public: // Declare Public Functions
   // Default Constructor  for DeliveryMan Class
@@ -15,6 +17,7 @@ public: // Declare Public Functions
   DeliveryMan(string Name, string Email, string Mobile, string MotorbikeID);
   // Getters
   string getMotorbikeID();
+  int getFaultHandler();
   // Declare Setters
   void setMotorbikeID(const string value);
   // Print DeliveryMan Information
