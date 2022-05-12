@@ -11,14 +11,14 @@ using namespace std;
 Order::Order(){};
 //   Parametrized Constructor
 Order::Order(string OrderItems, string customer, string deliveryman,
-             double totalPrice) {
+             double totalPrice, string status) {
   id = generateID("Order");
   orderItems = OrderItems;
   Customer = customer;
   DeliveryMan = deliveryman;
   OrderTime = getCurrentTime();
   DeliveryTime = "-";
-  Status = "Incomplete";
+  Status = status;
   TotalPrice = totalPrice;
   faultHandler = 100;
 };

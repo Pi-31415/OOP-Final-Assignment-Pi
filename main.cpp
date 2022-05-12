@@ -142,7 +142,7 @@ int main() {
       break;
     case 6:
       query = "";
-      getStringVariable(query, "ID to delete (Type, e.g. O16807)");
+      getStringVariable(query, "Order ID to delete (Type, e.g. O16807)");
       mainDataBase.removeOrder(query);
       clearScreen();
       mainDataBase.printInfo();
@@ -150,7 +150,14 @@ int main() {
       getIntegerVariable(choice, "Enter Choice [5,6,7,8]");
       break;
     case 7:
-      cout << "Sunday";
+      query = "";
+      getStringVariable(query, "Order ID to mark complete (Type, e.g. O16807)");
+      mainDataBase.markAsComplete(query);
+      clearScreen();
+      mainDataBase.printInfo();
+      printMenuOrder();
+      getIntegerVariable(choice, "Enter Choice [5,6,7,8]");
+      break;
       break;
     case 8:
       // Main Menu

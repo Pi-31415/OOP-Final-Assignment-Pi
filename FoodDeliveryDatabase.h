@@ -21,6 +21,8 @@ public:
                 double totalPrice);
   // This removes the Order with the specific ID
   void removeOrder(string ID);
+  // This marks an order as complete
+  void markAsComplete(string ID);
   // This marks the order as complete
   double completeOrder(string ID);
   //   This prints out the information of all Orders

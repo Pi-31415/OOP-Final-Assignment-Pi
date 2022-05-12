@@ -24,7 +24,7 @@ public:
   Order();
   //   Parametrized Constructor
   Order(string OrderItems, string customer, string deliveryman,
-        double totalPrice);
+        double totalPrice, string status);
   //   Getters
   string getID();
   string getCustomer();
