@@ -38,19 +38,21 @@ int main() {
   // c1.addDeliveryMan("Phi", "pk22@nyu.edu", "987654321", "NYUAD101");
   // c1.printInfo();
 
-  // ItemList c1;
-  // c1.addItem("Juice", 11.0);
-  // c1.addItem("Cake", 12.0);
-  // c1.addItem("Apple", 13.0);
-  // c1.printInfo();
-
   // Order o1("Coke,Bottle", "Pi Ko", "Eyob", 234);
   clearScreen();
   printBanner();
 
-  FoodDeliveryDatabase f;
-  f.addOrder("Coke,Bottle", "Pi Ko", "Eyob", 234);
-  f.printInfo();
+  ItemList c1;
+  c1.addItem("Juice", 11.0);
+  c1.addItem("Cake", 12.0);
+  c1.addItem("Apple", 13.0);
+  c1.printInfo();
+
+  cout << c1.calculateTotalPrice();
+
+  // FoodDeliveryDatabase f;
+  // f.addOrder("Coke,Bottle", "Pi Ko", "Eyob", 234);
+  // f.printInfo();
 
   // cout << "\n\n\n\n\n";
   // cout << o1.getID() << endl;

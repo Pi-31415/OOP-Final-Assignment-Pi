@@ -26,6 +26,11 @@ public:
   double getItemPrice(string ID);
   //   This prints out the information of all Item
   void printInfo();
+  // This calculates the total price (without discount), for particular item
+  // list
+  double calculateTotalPrice();
+  // This gives back a string of all items in the list
+  string getAllItems();
 };
 
 #endif

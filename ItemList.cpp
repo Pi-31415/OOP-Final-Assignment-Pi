@@ -71,6 +71,38 @@ double ItemList::getItemPrice(string ID) {
   }
 }
 
+// This calculates the total price (without discount), for particular item
+// list
+double ItemList::calculateTotalPrice() {
+  try {
+    list<Item>::iterator it;
+    // calculate total price
+    double totalPrice = 0;
+    for (it = ItemDatabase.begin(); it != ItemDatabase.end(); ++it) {
+      totalPrice += it->getPrice();
+    }
+    return totalPrice;
+  } catch (...) {
+    cout << "[Error] Cannot process item information.\n";
+    return 0;
+  }
+};
+// This gives back a string of all items in the list
+string ItemList::getAllItems() {
+  try {
+    list<Item>::iterator it;
+    // calculate total price
+    string totalPrice = 0;
+    for (it = ItemDatabase.begin(); it != ItemDatabase.end(); ++it) {
+      totalPrice += it->getPrice();
+    }
+    return totalPrice;
+  } catch (...) {
+    cout << "[Error] Cannot process item information.\n";
+    return "";
+  }
+};
+
 //   This prints out the information of all Items, in a tabular format
 void ItemList::printInfo() {
   // First Print Headers
