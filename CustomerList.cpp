@@ -57,12 +57,19 @@ void CustomerList::getCustomerInfo(string ID) {
   result->printInfo();
 }
 
+// This prints out a particular customer's discount from their ID
+double CustomerList::getCustomerDiscount(string ID) {
+  list<Customer>::iterator result = Customers.begin();
+  result = find_if(Customers.begin(), Customers.end(), findByID(ID));
+  return result->getDiscount();
+}
+
 //   This prints out the information of all customers, in a tabular format
 void CustomerList::printInfo() {
   // First Print Headers
   cout << "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
   cout << "█ CURRENT CUSTOMERS IN SYSTEM █";
-  cout << "\n██████████████████████████████████████████████████████████████████"
+  cout << "\n█████████████████████████████████████████████████████████████████"
           "████████████████████████████████";
   cout << "\n█ ";
   cout << setw(5) << left << "#";
@@ -72,7 +79,7 @@ void CustomerList::printInfo() {
   cout << setw(TAB_WIDTH) << left << "Name"
        << " █ ";
   cout << setw(TAB_WIDTH) << left << "Email"
-       << "  █ ";
+       << " █ ";
   cout << setw(TAB_WIDTH) << left << "Mobile"
        << " █ ";
   cout << setw(TAB_WIDTH) << left << "Address"
@@ -95,6 +102,6 @@ void CustomerList::printInfo() {
     cout << setw(TAB_WIDTH) << left << it->getDiscount() << "█ \n";
   }
   // Print closing line
-  cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
+  cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
           "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n";
 };
