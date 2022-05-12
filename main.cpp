@@ -57,7 +57,9 @@ int main() {
     } else {
       string name;
       getStringVariable(name, "ID to delete");
+      c1.getDeliveryManInfo(name);
       c1.removeDeliveryMan(name);
+      c1.getDeliveryManInfo(name);
       c1.printInfo();
       // c1.getDeliveryManInfo(name);
       // cout << c1.getCustomerDiscount(name);

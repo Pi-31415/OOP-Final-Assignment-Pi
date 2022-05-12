@@ -62,46 +62,63 @@ void DeliveryManList::removeDeliveryMan(string ID) {
 
 // This prints out a particular DeliveryMan's information from their ID
 void DeliveryManList::getDeliveryManInfo(string ID) {
-  list<DeliveryMan>::iterator result = DeliveryMen.begin();
-  result = find_if(DeliveryMen.begin(), DeliveryMen.end(), findByID(ID));
-  result->printInfo();
+  try {
+    list<DeliveryMan>::iterator result = DeliveryMen.begin();
+    result = find_if(DeliveryMen.begin(), DeliveryMen.end(), findByID(ID));
+    // If the result is from random memory addresses, reject the finding result
+    // I used a variable to check because inability to find an item in list
+    // results in segmentation fault And segmentation faults cannot be caught
+    // via try catch
+    if (result->getFaultHandler() != 100) {
+      throw(0);
+    } else {
+      result->printInfo();
+    }
+  } catch (...) {
+    cout << "[Error] Could not find delivery man with ID " << ID << ".\n";
+  }
 }
 
 //   This prints out the information of all DeliveryMen, in a tabular format
 void DeliveryManList::printInfo() {
-  // First Print Headers
-  cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
-  cout << "█ CURRENT DELIVERY MEN IN SYSTEM █";
-  cout << "\n██████████████████████████████████████████████████████████████████"
-          "████████████████";
-  cout << "\n█ ";
-  cout << setw(5) << left << "#";
-  cout << "█ ";
-  cout << setw(TAB_WIDTH) << left << "ID"
-       << " █ ";
-  cout << setw(TAB_WIDTH) << left << "Name"
-       << " █ ";
-  cout << setw(TAB_WIDTH) << left << "Email"
-       << " █ ";
-  cout << setw(TAB_WIDTH) << left << "Mobile"
-       << " █ ";
-  cout << setw(TAB_WIDTH) << left << "Motobike ID"
-       << "█ \n";
-  list<DeliveryMan>::iterator it;
-  // Print Data
-  int counter = 0;
-  for (it = DeliveryMen.begin(); it != DeliveryMen.end(); ++it) {
-    counter++;
+  try {
+    // First Print Headers
+    cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
+    cout << "█ CURRENT DELIVERY MEN IN SYSTEM █";
+    cout << "\n████████████████████████████████████████████████████████████████"
+            "██"
+            "████████████████";
+    cout << "\n█ ";
+    cout << setw(5) << left << "#";
     cout << "█ ";
-    cout << setw(5) << left << counter;
-    cout << "█ ";
-    cout << setw(TAB_WIDTH) << left << it->getID() << " █ ";
-    cout << setw(TAB_WIDTH) << left << it->getName() << " █ ";
-    cout << setw(TAB_WIDTH) << left << it->getEmail() << " █ ";
-    cout << setw(TAB_WIDTH) << left << it->getMobile() << " █ ";
-    cout << setw(TAB_WIDTH) << left << it->getMotorbikeID() << "█ \n";
+    cout << setw(TAB_WIDTH) << left << "ID"
+         << " █ ";
+    cout << setw(TAB_WIDTH) << left << "Name"
+         << " █ ";
+    cout << setw(TAB_WIDTH) << left << "Email"
+         << " █ ";
+    cout << setw(TAB_WIDTH) << left << "Mobile"
+         << " █ ";
+    cout << setw(TAB_WIDTH) << left << "Motobike ID"
+         << "█ \n";
+    list<DeliveryMan>::iterator it;
+    // Print Data
+    int counter = 0;
+    for (it = DeliveryMen.begin(); it != DeliveryMen.end(); ++it) {
+      counter++;
+      cout << "█ ";
+      cout << setw(5) << left << counter;
+      cout << "█ ";
+      cout << setw(TAB_WIDTH) << left << it->getID() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getName() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getEmail() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getMobile() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getMotorbikeID() << "█ \n";
+    }
+    // Print closing line
+    cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
+            "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n";
+  } catch (...) {
+    cout << "[Error] Could not print delivery men information.\n";
   }
-  // Print closing line
-  cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
-          "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n";
 };
