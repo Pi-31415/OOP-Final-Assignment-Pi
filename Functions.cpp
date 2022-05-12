@@ -102,3 +102,18 @@ void getStringVariable(string &variable, string message) {
     }
   }
 }
+// Get the current Local Time as string
+string getCurrentTime() {
+  //   Date Time Reference
+  //   (https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
+  // current date/time based on current system
+  time_t now = time(0);
+  tm *ltm = localtime(&now);
+
+  // Format time using tm structure.
+  string formattedTime =
+      to_string(1900 + ltm->tm_year) + "-" + to_string(1 + ltm->tm_mon) + "-" +
+      to_string(ltm->tm_mday) + " " + to_string(ltm->tm_hour) + ":" +
+      to_string(ltm->tm_min) + ":" + to_string(ltm->tm_sec);
+  return (formattedTime);
+}

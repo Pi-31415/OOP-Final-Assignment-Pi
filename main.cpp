@@ -43,6 +43,17 @@ int main() {
   // c1.addItem("Apple", 13.0);
   // c1.printInfo();
 
+  Order o1("Coke,Bottle", "Pi Ko", "Eyob", 234);
+
+  cout << o1.getID() << endl;
+  cout << o1.getCustomer() << endl;
+  cout << o1.getDeliveryMan() << endl;
+  cout << o1.getOrderTime() << endl;
+  cout << o1.getDeliveryTime() << endl;
+  cout << o1.getStatus() << endl;
+  cout << o1.getItems() << endl;
+  cout << o1.getTotalPrice() << endl;
+
   // // CustomerList c1;
   // // c1.addCustomer("Pi Ko", "pk22@nyu.edu", "987654321", "NYU", 10);
   // // c1.addCustomer("Sig", "pk22@nyu.edu", "987654321", "NYU", 20);

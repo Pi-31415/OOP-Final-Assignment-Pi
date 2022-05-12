@@ -19,5 +19,7 @@ void getDoubleVariable(double &variable, string message);
 // Get the input, try convert it to string, validate it and store it in the
 // variable
 void getStringVariable(string &variable, string message);
+// Get the current Local Time as string
+string getCurrentTime();
 
 #endif

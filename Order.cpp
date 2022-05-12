@@ -1,17 +1,25 @@
 #include "Order.h"
+#include "Functions.h"
+#include <ctime>
 #include <iomanip>
 #include <iostream>
+#include <string>
 using namespace std;
 // Define the Tab Width for setw
 #define TAB_WIDTH 12
 // Default Constructor
 Order::Order(){};
 //   Parametrized Constructor
-Order::Order(string OrderItems, string customer, string deliveryman) {
+Order::Order(string OrderItems, string customer, string deliveryman,
+             double totalPrice) {
   id = generateID("Order");
   orderItems = OrderItems;
   Customer = customer;
   DeliveryMan = deliveryman;
+  OrderTime = getCurrentTime();
+  DeliveryTime = "-";
+  Status = "Incomplete";
+  TotalPrice = totalPrice;
 };
 //   Getters
 string Order::getID() { return id; };
