@@ -1,7 +1,7 @@
 COMPILER=g++
 OPTS=-c
 
-output: main.cpp Functions.o Person.o Customer.o CustomerList.o DeliveryMan.o DeliveryManList.o
+output: main.cpp Functions.o Person.o Customer.o CustomerList.o DeliveryMan.o DeliveryManList.o Item.o
 	clear
 	$(COMPILER) $^ -o $@
 	./output
@@ -22,6 +22,9 @@ CustomerList.o: CustomerList.cpp *.h
 	$(COMPILER) $(OPTS) $<
 
 DeliveryManList.o: DeliveryManList.cpp *.h
+	$(COMPILER) $(OPTS) $<
+
+Item.o: Item.cpp *.h
 	$(COMPILER) $(OPTS) $<
 
 clean:

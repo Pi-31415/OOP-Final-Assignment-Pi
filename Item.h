@@ -11,10 +11,10 @@ private:
   double price;
 
 public: // Declare Public Functions
-  // Default Constructor  for DeliveryMan Class
+  // Default Constructor  for Item Class
   Item();
-  // Paramterized Constructor for DeliveryMan Class
-  Item(string Name, int Stock = 0, double Price = 0.0);
+  // Paramterized Constructor for Item Class
+  Item(string Name, int Stock, double Price);
   // Getters
   string getID();
   string getName();
