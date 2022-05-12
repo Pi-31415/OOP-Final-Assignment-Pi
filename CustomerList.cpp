@@ -55,7 +55,7 @@ void CustomerList::removeCustomer(string ID) {
       Customers.erase(result);
     }
   } catch (...) {
-    cout << "[Error] Could not remove customer with ID " << ID;
+    cout << "[Error] Could not remove customer with ID " << ID << ".\n";
   }
 }
 
@@ -71,7 +71,7 @@ void CustomerList::getCustomerInfo(string ID) {
       result->printInfo();
     }
   } catch (...) {
-    cout << "[Error] Could not find customer with ID " << ID << ".";
+    cout << "[Error] Could not find customer with ID " << ID << ".\n";
   }
 }
 
@@ -87,7 +87,7 @@ double CustomerList::getCustomerDiscount(string ID) {
       return result->getDiscount();
     }
   } catch (...) {
-    cout << "[Error] Could not find customer with ID " << ID << ".";
+    cout << "[Error] Could not find customer with ID " << ID << ".\n";
     return 0;
   }
 }
@@ -135,6 +135,6 @@ void CustomerList::printInfo() {
     cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
             "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n";
   } catch (...) {
-    cout << "[Error] Could not print customer information.";
+    cout << "[Error] Could not print customer information.\n";
   }
 };

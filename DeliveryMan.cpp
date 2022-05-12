@@ -24,7 +24,7 @@ string DeliveryMan::getMotorbikeID() { return motorbikeID; };
 void DeliveryMan::setMotorbikeID(const string value) { motorbikeID = value; };
 // Print DeliveryMan Information
 void DeliveryMan::printInfo() {
-  cout << "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
+  cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
   cout << "█ Delivery Man " << id << " Information █\n";
   cout << setw(TAB_WIDTH) << left << "Name : " << name << "\n";
   cout << setw(TAB_WIDTH) << left << "Email : " << email << "\n";

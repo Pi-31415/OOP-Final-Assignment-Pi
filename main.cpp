@@ -59,7 +59,10 @@ int main() {
       getStringVariable(name, "ID to delete");
       // c1.getDeliveryManInfo(name);
       cout << c1.getCustomerDiscount(name);
-      // database1.removeItem(name);
+      c1.getCustomerInfo(name);
+      c1.removeCustomer(name);
+      c1.printInfo();
+      c1.getCustomerInfo(name);
       // database1.printInfo();
       // break;
     }

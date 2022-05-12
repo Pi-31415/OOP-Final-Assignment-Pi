@@ -27,7 +27,7 @@ void Customer::setAddress(const string value) { address = value; };
 void Customer::setDiscount(const double value) { discount = value; };
 // Print Customer Information
 void Customer::printInfo() {
-  cout << "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
+  cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
   cout << "█ Customer " << id << " Information █\n";
   cout << setw(TAB_WIDTH) << left << "Name : " << name << "\n";
   cout << setw(TAB_WIDTH) << left << "Email : " << email << "\n";
