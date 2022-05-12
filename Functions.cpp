@@ -117,3 +117,38 @@ string getCurrentTime() {
       to_string(ltm->tm_min) + ":" + to_string(ltm->tm_sec);
   return (formattedTime);
 }
+
+// This prints a banner on main menu
+void printBanner() {
+  cout
+      << ".__                           __   .__                         .__   "
+      << endl;
+  cout
+      << "|__|_______ _______ _____   _/  |_ |__|  ____    ____  _____   |  |  "
+      << endl;
+  cout << "|  |\\_  __ \\\\_  __ \\\\__  \\  \\   __\\|  | /  _ \\  /    \\ "
+          "\\__  \\  |  |  "
+       << endl;
+  cout << "|  | |  | \\/ |  | \\/ / __ \\_ |  |  |  |(  <_> )|   |  \\ / __ "
+          "\\_|  |__"
+       << endl;
+  cout << "|__| |__|    |__|   (____  / |__|  |__| \\____/ |___|  /(____  "
+          "/|____/"
+       << endl;
+  cout << "                         \\/                         \\/      \\/  "
+       << endl;
+  cout << endl;
+  cout << "  __                     __           " << endl;
+  cout << "_/  |_ _____     _______/  |_   ____  " << endl;
+  cout << "\\   __ \\__  \\   /  ___/\\   __\\_/ __ \\ " << endl;
+  cout << " |  |   / __ \\_ \\___ \\  |  |  \\  ___/ " << endl;
+  cout << " |__|  (____  //____  > |__|   \\___  >" << endl;
+  cout << "            \\/      \\/             \\/ " << endl;
+}
+
+// Clears the screen by printing many blank lines
+void clearScreen() {
+  for (int i = 0; i <= 1000; i++) {
+    cout << endl;
+  }
+}

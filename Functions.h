@@ -22,4 +22,10 @@ void getStringVariable(string &variable, string message);
 // Get the current Local Time as string
 string getCurrentTime();
 
+// This prints a banner on main menu
+void printBanner();
+
+// Clears the screen by printing many blank lines.
+void clearScreen();
+
 #endif

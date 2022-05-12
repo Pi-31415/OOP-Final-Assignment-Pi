@@ -45,6 +45,8 @@ int main() {
   // c1.printInfo();
 
   // Order o1("Coke,Bottle", "Pi Ko", "Eyob", 234);
+  clearScreen();
+  printBanner();
 
   FoodDeliveryDatabase f;
   f.addOrder("Coke,Bottle", "Pi Ko", "Eyob", 234);
