@@ -7,7 +7,12 @@ using namespace std;
 // Default Constructor
 Order::Order(){};
 //   Parametrized Constructor
-Order::Order(string OrderItems, string customer, string deliveryman){};
+Order::Order(string OrderItems, string customer, string deliveryman) {
+  id = generateID("Order");
+  orderItems = OrderItems;
+  Customer = customer;
+  DeliveryMan = deliveryman;
+};
 //   Getters
 string Order::getID() { return id; };
 string Order::getCustomer() { return Customer; };
