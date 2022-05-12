@@ -5,12 +5,12 @@
 
 class Item {
 private:
-  string id;
   string name;
   int stock;
   double price;
 
 public: // Declare Public Functions
+  string id;
   // Default Constructor  for Item Class
   Item();
   // Paramterized Constructor for Item Class
