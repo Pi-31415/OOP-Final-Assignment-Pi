@@ -45,63 +45,96 @@ void CustomerList::removeCustomer(string ID) {
   // Below code is for finding object in the list, by functor predicate and
   // std::find_if. Reference :
   // https://stackoverflow.com/questions/16445358/stdfind-object-by-member
-  list<Customer>::iterator result = Customers.begin();
-  result = find_if(Customers.begin(), Customers.end(), findByID(ID));
-  Customers.erase(result);
+  try {
+    list<Customer>::iterator result = Customers.begin();
+    result = find_if(Customers.begin(), Customers.end(), findByID(ID));
+    // If the result is from random memory addresses, reject the finding result
+    if (result->getDiscount() <= 0.0000000001 && result->getDiscount() != 0) {
+      throw(0);
+    } else {
+      Customers.erase(result);
+    }
+  } catch (...) {
+    cout << "[Error] Could not remove customer with ID " << ID;
+  }
 }
 
 // This prints out a particular customer's information from their ID
 void CustomerList::getCustomerInfo(string ID) {
-  list<Customer>::iterator result = Customers.begin();
-  result = find_if(Customers.begin(), Customers.end(), findByID(ID));
-  result->printInfo();
+  try {
+    list<Customer>::iterator result = Customers.begin();
+    result = find_if(Customers.begin(), Customers.end(), findByID(ID));
+    // If the result is from random memory addresses, reject the finding result
+    if (result->getDiscount() <= 0.0000000001 && result->getDiscount() != 0) {
+      throw(0);
+    } else {
+      result->printInfo();
+    }
+  } catch (...) {
+    cout << "[Error] Could not find customer with ID " << ID << ".";
+  }
 }
 
 // This prints out a particular customer's discount from their ID
 double CustomerList::getCustomerDiscount(string ID) {
-  list<Customer>::iterator result = Customers.begin();
-  result = find_if(Customers.begin(), Customers.end(), findByID(ID));
-  return result->getDiscount();
+  try {
+    list<Customer>::iterator result = Customers.begin();
+    result = find_if(Customers.begin(), Customers.end(), findByID(ID));
+    // If the result is from random memory addresses, reject the finding result
+    if (result->getDiscount() <= 0.0000000001 && result->getDiscount() != 0) {
+      throw(0);
+    } else {
+      return result->getDiscount();
+    }
+  } catch (...) {
+    cout << "[Error] Could not find customer with ID " << ID << ".";
+    return 0;
+  }
 }
 
 //   This prints out the information of all customers, in a tabular format
 void CustomerList::printInfo() {
-  // First Print Headers
-  cout << "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
-  cout << "█ CURRENT CUSTOMERS IN SYSTEM █";
-  cout << "\n█████████████████████████████████████████████████████████████████"
-          "████████████████████████████████";
-  cout << "\n█ ";
-  cout << setw(5) << left << "#";
-  cout << "█ ";
-  cout << setw(TAB_WIDTH) << left << "ID"
-       << " █ ";
-  cout << setw(TAB_WIDTH) << left << "Name"
-       << " █ ";
-  cout << setw(TAB_WIDTH) << left << "Email"
-       << " █ ";
-  cout << setw(TAB_WIDTH) << left << "Mobile"
-       << " █ ";
-  cout << setw(TAB_WIDTH) << left << "Address"
-       << " █ ";
-  cout << setw(TAB_WIDTH) << left << "Discount %"
-       << "█ \n";
-  list<Customer>::iterator it;
-  // Print Data
-  int counter = 0;
-  for (it = Customers.begin(); it != Customers.end(); ++it) {
-    counter++;
+  try {
+    // First Print Headers
+    cout << "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
+    cout << "█ CURRENT CUSTOMERS IN SYSTEM █";
+    cout
+        << "\n█████████████████████████████████████████████████████████████████"
+           "████████████████████████████████";
+    cout << "\n█ ";
+    cout << setw(5) << left << "#";
     cout << "█ ";
-    cout << setw(5) << left << counter;
-    cout << "█ ";
-    cout << setw(TAB_WIDTH) << left << it->getID() << " █ ";
-    cout << setw(TAB_WIDTH) << left << it->getName() << " █ ";
-    cout << setw(TAB_WIDTH) << left << it->getEmail() << " █ ";
-    cout << setw(TAB_WIDTH) << left << it->getMobile() << " █ ";
-    cout << setw(TAB_WIDTH) << left << it->getAddress() << " █ ";
-    cout << setw(TAB_WIDTH) << left << it->getDiscount() << "█ \n";
+    cout << setw(TAB_WIDTH) << left << "ID"
+         << " █ ";
+    cout << setw(TAB_WIDTH) << left << "Name"
+         << " █ ";
+    cout << setw(TAB_WIDTH) << left << "Email"
+         << " █ ";
+    cout << setw(TAB_WIDTH) << left << "Mobile"
+         << " █ ";
+    cout << setw(TAB_WIDTH) << left << "Address"
+         << " █ ";
+    cout << setw(TAB_WIDTH) << left << "Discount %"
+         << "█ \n";
+    list<Customer>::iterator it;
+    // Print Data
+    int counter = 0;
+    for (it = Customers.begin(); it != Customers.end(); ++it) {
+      counter++;
+      cout << "█ ";
+      cout << setw(5) << left << counter;
+      cout << "█ ";
+      cout << setw(TAB_WIDTH) << left << it->getID() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getName() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getEmail() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getMobile() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getAddress() << " █ ";
+      cout << setw(TAB_WIDTH) << left << it->getDiscount() << "█ \n";
+    }
+    // Print closing line
+    cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
+            "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n";
+  } catch (...) {
+    cout << "[Error] Could not print customer information.";
   }
-  // Print closing line
-  cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
-          "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n";
 };
