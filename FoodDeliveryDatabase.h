@@ -2,11 +2,6 @@
 #ifndef DATABASE_LIST_H
 #define DATABASE_LIST_H
 
-#include "Customer.h"
-#include "CustomerList.h"
-#include "DeliveryMan.h"
-#include "DeliveryManList.h"
-#include "FoodDeliveryDatabase.h"
 #include "Functions.h"
 #include "Order.h"
 #include <algorithm>

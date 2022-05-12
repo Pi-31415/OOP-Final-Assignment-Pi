@@ -8,6 +8,7 @@
 #include "CustomerList.h"
 #include "DeliveryMan.h"
 #include "DeliveryManList.h"
+#include "FoodDeliveryDatabase.h"
 #include "Functions.h"
 #include "Item.h"
 #include "ItemList.h"
@@ -43,30 +44,34 @@ int main() {
   // c1.addItem("Apple", 13.0);
   // c1.printInfo();
 
-  Order o1("Coke,Bottle", "Pi Ko", "Eyob", 234);
+  // Order o1("Coke,Bottle", "Pi Ko", "Eyob", 234);
 
-  cout << "\n\n\n\n\n";
-  cout << o1.getID() << endl;
-  cout << o1.getCustomer() << endl;
-  cout << o1.getDeliveryMan() << endl;
-  cout << o1.getOrderTime() << endl;
-  cout << o1.getDeliveryTime() << endl;
-  cout << o1.getStatus() << endl;
-  cout << o1.getItems() << endl;
-  cout << o1.getTotalPrice() << endl;
+  FoodDeliveryDatabase f;
+  f.addOrder("Coke,Bottle", "Pi Ko", "Eyob", 234);
+  f.printInfo();
 
-  o1.setStatus("Delivered");
+  // cout << "\n\n\n\n\n";
+  // cout << o1.getID() << endl;
+  // cout << o1.getCustomer() << endl;
+  // cout << o1.getDeliveryMan() << endl;
+  // cout << o1.getOrderTime() << endl;
+  // cout << o1.getDeliveryTime() << endl;
+  // cout << o1.getStatus() << endl;
+  // cout << o1.getItems() << endl;
+  // cout << o1.getTotalPrice() << endl;
 
-  cout << "\n\n\n\n\n";
-  cout << o1.getID() << endl;
-  cout << o1.getCustomer() << endl;
-  cout << o1.getDeliveryMan() << endl;
-  cout << o1.getOrderTime() << endl;
-  cout << o1.getDeliveryTime() << endl;
-  cout << o1.getStatus() << endl;
-  cout << o1.getItems() << endl;
-  cout << o1.getTotalPrice() << endl;
-  cout << o1.getFaultHandler() << endl;
+  // o1.setStatus("Delivered");
+
+  // cout << "\n\n\n\n\n";
+  // cout << o1.getID() << endl;
+  // cout << o1.getCustomer() << endl;
+  // cout << o1.getDeliveryMan() << endl;
+  // cout << o1.getOrderTime() << endl;
+  // cout << o1.getDeliveryTime() << endl;
+  // cout << o1.getStatus() << endl;
+  // cout << o1.getItems() << endl;
+  // cout << o1.getTotalPrice() << endl;
+  // cout << o1.getFaultHandler() << endl;
 
   // // CustomerList c1;
   // // c1.addCustomer("Pi Ko", "pk22@nyu.edu", "987654321", "NYU", 10);

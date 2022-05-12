@@ -68,8 +68,8 @@ void FoodDeliveryDatabase::removeOrder(string ID) {
 void FoodDeliveryDatabase::printInfo() {
   // First Print Headers
   try {
-    cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
-    cout << "█ Available Orders █";
+    cout << "\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n";
+    cout << "█ Current Orders █";
     cout << "\n███████████████████████████████████████████████████"
             "█";
     cout << "\n█ ";
