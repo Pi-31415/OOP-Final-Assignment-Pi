@@ -18,11 +18,11 @@ public:
   // This adds a new Item instance to the list container, manually
   void addItem();
   // This adds a new Item programatically via function overloading
-  void addItem(string Name, int Stock, double Price);
+  void addItem(string Name, double Price);
   // This removes the Item with the specific ID
   void removeItem(string ID);
-  // This prints out a particular Item's information from their ID
-  Item getItemInfo(string ID);
+  // This prints out a particular Item's price from their ID
+  double getItemPrice(string ID);
   //   This prints out the information of all Item
   void printInfo();
 };

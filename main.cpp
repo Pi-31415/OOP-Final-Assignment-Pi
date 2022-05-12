@@ -37,9 +37,9 @@ int main() {
   // c1.printInfo();
 
   ItemList database1;
-  database1.addItem("Juice", 5, 10.0);
-  database1.addItem("Cake", 5, 10.0);
-  database1.addItem("Apple", 5, 10.0);
+  database1.addItem("Juice", 11.0);
+  database1.addItem("Cake", 12.0);
+  database1.addItem("Apple", 13.0);
   database1.printInfo();
 
   int menu = 0;
@@ -52,8 +52,9 @@ int main() {
       string name;
       getStringVariable(name, "ID to delete");
       // c1.getDeliveryManInfo(name);
-      database1.removeItem(name);
-      database1.printInfo();
+      cout << database1.getItemPrice(name);
+      // database1.removeItem(name);
+      // database1.printInfo();
       // break;
     }
   }
