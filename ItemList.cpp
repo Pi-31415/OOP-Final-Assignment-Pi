@@ -92,11 +92,17 @@ string ItemList::getAllItems() {
   try {
     list<Item>::iterator it;
     // calculate total price
-    string totalPrice = 0;
+    string finalString = "";
+    // Format all the items into a nice string, separated by commas
     for (it = ItemDatabase.begin(); it != ItemDatabase.end(); ++it) {
-      totalPrice += it->getPrice();
+      finalString.append(it->getName());
+      finalString.append(",");
     }
-    return totalPrice;
+    // Remove the last comma appended
+    if (!finalString.empty()) {
+      finalString.pop_back();
+    }
+    return finalString;
   } catch (...) {
     cout << "[Error] Cannot process item information.\n";
     return "";

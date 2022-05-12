@@ -48,7 +48,7 @@ int main() {
   c1.addItem("Apple", 13.0);
   c1.printInfo();
 
-  cout << c1.calculateTotalPrice();
+  cout << c1.getAllItems();
 
   // FoodDeliveryDatabase f;
   // f.addOrder("Coke,Bottle", "Pi Ko", "Eyob", 234);

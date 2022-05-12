@@ -1,5 +1,5 @@
 COMPILER=g++
-OPTS=-c
+OPTS=--std=c++11 -c 
 
 output: main.cpp Functions.o Person.o Customer.o CustomerList.o DeliveryMan.o DeliveryManList.o Item.o ItemList.o Order.o FoodDeliveryDatabase.o
 	clear
