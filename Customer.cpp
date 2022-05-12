@@ -17,6 +17,7 @@ Customer::Customer(string Name, string Email, string Mobile, string Address,
   mobile = Mobile;
   address = Address;
   discount = Discount;
+  faultHandler = 100;
 };
 
 // Getters

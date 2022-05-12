@@ -21,6 +21,8 @@ int main() {
   printBanner();
   printMainMenu();
 
+  string query = "";
+
   // Instantiate Objects
   CustomerList customersData;
   DeliveryManList deliveryMenData;
@@ -98,10 +100,21 @@ int main() {
       getIntegerVariable(choice, "Enter Choice [1,2,3,4 or 0]");
       break;
     case 9:
-      cout << "Sunday";
+      // Add new customer
+      customersData.addCustomer();
+      clearScreen();
+      customersData.printInfo();
+      printMenuCustomer();
+      getIntegerVariable(choice, "Enter Choice [9,10,11]");
       break;
     case 10:
-      cout << "Sunday";
+      query = "";
+      getStringVariable(query, "ID to delete (Copy and paste, e.g. C16807)");
+      customersData.removeCustomer(query);
+      clearScreen();
+      customersData.printInfo();
+      printMenuCustomer();
+      getIntegerVariable(choice, "Enter Choice [9,10,11]");
       break;
     case 11:
       // Main Menu
@@ -217,7 +230,7 @@ int main() {
   //     string name;
   //     getStringVariable(name, "ID to delete");
   //     // cout << c1.getCustomerDiscount(name);
-  //     // c1.removeCustomer(name);
+
   //     // cout << c1.getCustomerDiscount(name);
   //     cout << c1.getItemPrice(name);
   //     c1.removeItem(name);

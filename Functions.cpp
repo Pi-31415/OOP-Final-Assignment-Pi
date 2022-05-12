@@ -87,8 +87,9 @@ void getStringVariable(string &variable, string message) {
   while (numberIsValid == false) {
     try {
       cout << "[INPUT] " << message << " : ";
+      cin.ignore();
       // Get input as string
-      cin >> rawInput;
+      getline(cin, rawInput);
       // Check if it is empty string
       variable = rawInput;
       if (variable == "") {
