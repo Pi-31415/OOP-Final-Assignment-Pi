@@ -3,7 +3,6 @@
 
 #include "Customer.h"
 #include "Functions.h"
-
 #include <algorithm>
 #include <iterator>
 #include <list>
